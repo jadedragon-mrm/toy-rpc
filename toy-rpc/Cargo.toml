@@ -100,6 +100,7 @@ flume = "0.10"
 pin-project = "1.0"
 crossbeam = "0.8"
 brw = { version = "^0.1.6" }
+anyhow = "1"
 
 [[test]]
 name = "async_std_tcp"

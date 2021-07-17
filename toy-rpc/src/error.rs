@@ -156,6 +156,12 @@ impl From<webpki::InvalidDNSNameError> for crate::error::Error {
 //     fn into_error(self) -> Error;
 // }
 
+impl From<anyhow::Error> for Error {
+    fn from(err: anyhow::Error) -> Self {
+        Self::ExecutionError(err.to_string())
+    }
+}
+
 impl From<String> for Error {
     fn from(val: String) -> Self {
         Self::ExecutionError(val)
