@@ -1,0 +1,21 @@
+[package]
+name = "anyhow_test"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+crate-type = ["lib"]
+
+[dependencies]
+# tokio = { version = "1", features = ["rt-multi-thread", "macros", ] }
+tokio = { version = "1.6.0", features = ["rt-multi-thread", "macros", "net", "sync", "time", "io-util"] }
+log = "0.4.14"
+env_logger = "0.8.3"
+async-trait = "0.1.50"
+anyhow = "1"
+
+[dependencies.toy-rpc]
+git = "https://github.com/minghuaw/toy-rpc"
+branch = "main"
+features = ["server", "client", "tokio_runtime"]
